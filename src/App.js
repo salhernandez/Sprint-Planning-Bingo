@@ -1,10 +1,7 @@
-import Item from './item'
+import React from 'react';
+import Item from './item';
 import Confetti from './Confetti';
 import './App.css';
-
-function onClickHandler(event) {
-    alert('something')
-}
 
 const rowData = [
     [
@@ -44,20 +41,27 @@ const rowData = [
     ]
 ]
 
-function App() {
-    return (
-        <div className="App">
-            <Confetti />
-            <div class="container grid-container">
-                {rowData.map(row =>
-                    <Item
-                        onClickHandler={onClickHandler}
-                        labels={row}
-                    />
-                )}
+export default class App extends React.Component {
+
+    onClickHandler(event) {
+        alert('something')
+    }
+
+    render(){
+        return (
+            <div className="App">
+                <Confetti />
+                <div class="container grid-container">
+                    {rowData.map(row =>
+                        <Item
+                            onClickHandler={this.onClickHandler}
+                            labels={row}
+                        />
+                    )}
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
-export default App;
+
