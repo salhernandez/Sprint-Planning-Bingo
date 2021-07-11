@@ -5,19 +5,22 @@ import './App.css';
 function onClickHandler(event){
     alert('something')
 }
+
 function App() {
     return (
         <div className="App">
-            <Item/>
             <Confetti/>
             <div class="container grid-container">
-                <div class="row">
-                    <div onClick={event => onClickHandler()} class="col-sm-offset-3 col-sm-1 grid-item">Someone drinks water</div>
-                    <div class="col-sm-1 grid-item">Talking way too loud</div>
-                    <div class="col-sm-1 grid-item">Someone is late</div>
-                    <div class="col-sm-1 grid-item">Ticket Rolls</div>
-                    <div class="col-sm-1 grid-item">Annoying Echo</div>
-                </div>
+                <Item
+                    onClickHandler = {onClickHandler}
+                    labels = {[
+                        "Someone drinks water",
+                        "Talking way too loud",
+                        "Someone is late",
+                        "Ticket Rolls",
+                        "Annoying Echo"
+                    ]}
+                />
                 <div class="row">
                     <div class="col-sm-offset-3 col-sm-1 grid-item">Upset people or funny face</div>
                     <div class="col-sm-1 grid-item">Forehead only shown</div>
