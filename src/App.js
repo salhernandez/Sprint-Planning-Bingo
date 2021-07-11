@@ -121,9 +121,47 @@ export default class App extends React.Component {
                 ]
             ]
         }
+
+        this.onClickHandler = this.onClickHandler.bind(this);
     }
+
     onClickHandler(event) {
-        alert('something')
+        const text = event.target.textContent;
+        console.log(text)
+
+        // look for object in array, then update isMarked value
+
+        this.setState(prevState => {
+            let { rowData } = prevState;
+            let newRowData = [...rowData];
+
+
+            newRowData.forEach(row => {
+                let x = row.findIndex(item => item.label === text)
+                let y = false;
+
+                if(x >= 0){
+                    console.log(row[x].isMarked)
+
+                    if(row[x].isMarked === true){
+                        y = false
+                    } else {
+                        y = true;
+                    }
+                    row[x] = {
+                        ...row[x],
+                        isMarked: y
+                    }
+
+                    console.log(row[x].isMarked)
+                }
+            });
+
+            return {
+                ...prevState,
+                rowData: [...newRowData]   
+            }
+        });
     }
 
     render(){
