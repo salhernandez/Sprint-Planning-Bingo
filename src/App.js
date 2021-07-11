@@ -136,9 +136,11 @@ export default class App extends React.Component {
             let newRowData = [...rowData];
 
 
-            newRowData.forEach(row => {
+            newRowData.forEach((row, i) => {
                 let x = row.findIndex(item => item.label === text)
                 let y = false;
+
+                let newRow = [...row];
 
                 if(x >= 0){
                     console.log(row[x].isMarked)
@@ -148,15 +150,19 @@ export default class App extends React.Component {
                     } else {
                         y = true;
                     }
-                    row[x] = {
+
+                    newRow[x] = {
                         ...row[x],
                         isMarked: y
                     }
+
+                    newRowData[i] = newRow
 
                     console.log(row[x].isMarked)
                 }
             });
 
+            console.log(newRowData)
             return {
                 ...prevState,
                 rowData: [...newRowData]   
