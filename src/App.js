@@ -127,7 +127,6 @@ export default class App extends React.Component {
 
     onClickHandler(event) {
         const text = event.target.textContent;
-        console.log(text)
 
         // look for object in array, then update isMarked value
 
@@ -143,8 +142,6 @@ export default class App extends React.Component {
                 let newRow = [...row];
 
                 if(x >= 0){
-                    console.log(row[x].isMarked)
-
                     if(row[x].isMarked === true){
                         y = false
                     } else {
@@ -157,12 +154,9 @@ export default class App extends React.Component {
                     }
 
                     newRowData[i] = newRow
-
-                    console.log(row[x].isMarked)
                 }
             });
 
-            console.log(newRowData)
             return {
                 ...prevState,
                 rowData: [...newRowData]   
