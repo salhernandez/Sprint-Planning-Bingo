@@ -8,13 +8,13 @@ export default class GridItem extends React.Component {
         <div 
           onClick={() => this.props.onClickHandler()} 
           class="col-sm-offset-3 col-sm-1 grid-item">
-            {this.props.labels[0]}
+            {this.props.data[0].label}
             <img src={img} className="red-mark"/>
           </div>
-        <div onClick={() => this.props.onClickHandler()} class="col-sm-1 grid-item">{this.props.labels[1]}</div>
-        <div onClick={() => this.props.onClickHandler()} class="col-sm-1 grid-item">{this.props.labels[2]}</div>
-        <div onClick={() => this.props.onClickHandler()} class="col-sm-1 grid-item">{this.props.labels[3]}</div>
-        <div onClick={() => this.props.onClickHandler()} class="col-sm-1 grid-item">{this.props.labels[4]}</div>
+        <div onClick={() => this.props.onClickHandler()} class="col-sm-1 grid-item">{this.props.data[1].label}</div>
+        <div onClick={() => this.props.onClickHandler()} class="col-sm-1 grid-item">{this.props.data[2].label}</div>
+        <div onClick={() => this.props.onClickHandler()} class="col-sm-1 grid-item">{this.props.data[3].label}</div>
+        <div onClick={() => this.props.onClickHandler()} class="col-sm-1 grid-item">{this.props.data[4].label}</div>
       </div>
     )
   }

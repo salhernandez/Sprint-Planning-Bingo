@@ -10,39 +10,114 @@ export default class App extends React.Component {
         this.state = {
             rowData : [
                 [
-                    "Someone drinks water",
-                    "Talking way too loud",
-                    "Someone is late",
-                    "Ticket Rolls",
-                    "Annoying Echo"
+                    {
+                        label: "Someone drinks water",
+                        isMarked: false
+                    },
+                    {   
+                        label: "Talking way too loud",
+                        isMarked: false
+                    },
+                    {
+                        label: "Someone is late",
+                        isMarked: false
+                    },
+                    {
+                        label: "Ticket Rolls",
+                        isMarked: false
+                    },
+                    {
+                        label: "Annoying Echo",
+                        isMarked: false
+                    }
                 ],
                 [
-                    "Upset people or funny face",
-                    "Forehead only shown",
-                    "Breathing aggresively",
-                    "Talking on mute",
-                    "Timeline/Status Update"
+                    {
+                        label: "Upset people or funny face",
+                        isMarked: false
+                    },
+                    {   
+                        label: "Forehead only shown",
+                        isMarked: false
+                    },
+                    {
+                        label: "Breathing aggresively",
+                        isMarked: false
+                    },
+                    {
+                        label: "Talking on mute",
+                        isMarked: false
+                    },
+                    {
+                        label: "Timeline/Status Update",
+                        isMarked: false
+                    }
                 ],
                 [
-                    "Talking over each other",
-                    "Not sharing screen",
-                    "Free",
-                    ">13 Story points",
-                    "Eating/Snacking"
+                    {
+                        label: "Talking over each other",
+                        isMarked: false
+                    },
+                    {   
+                        label: "Not sharing screen",
+                        isMarked: false
+                    },
+                    {
+                        label: "Free",
+                        isMarked: false
+                    },
+                    {
+                        label: ">13 Story points",
+                        isMarked: false
+                    },
+                    {
+                        label: "Eating/Snacking",
+                        isMarked: false
+                    }
                 ],
                 [
-                    "Someone leaves early",
-                    "Awkward silence",
-                    "Animal distraction",
-                    "Robot/Static Voice",
-                    "Burndown is a cliff dive"
+                    {
+                        label: "Someone leaves early",
+                        isMarked: false
+                    },
+                    {   
+                        label: "Awkward silence",
+                        isMarked: false
+                    },
+                    {
+                        label: "Animal distraction",
+                        isMarked: false
+                    },
+                    {
+                        label: "Robot/Static Voice",
+                        isMarked: false
+                    },
+                    {
+                        label: "Burndown is a cliff dive",
+                        isMarked: false
+                    }
                 ],
                 [
-                    "Asking if everyone can hear you",
-                    "Going off topic",
-                    "<45 min. or >4hr sprint plannning",
-                    "Background talking/noise",
-                    "Covering mouth with hand"
+                    {
+                        label: "Asking if everyone can hear you",
+                        isMarked: false
+                    },
+                    {   
+                        label: "Going off topic",
+                        isMarked: false
+                    },
+                    {
+                        label: "<45 min. or >4hr sprint plannning",
+                        isMarked: false
+                    },
+                    {
+                        label: "Background talking/noise",
+                        isMarked: false
+                    },
+                    {
+                        label: "Covering mouth with hand",
+                        isMarked: false
+                    }
                 ]
             ]
         }
@@ -60,7 +135,7 @@ export default class App extends React.Component {
                     {rowData.map(row =>
                         <Item
                             onClickHandler={this.onClickHandler}
-                            labels={row}
+                            data={row}
                         />
                     )}
                 </div>
